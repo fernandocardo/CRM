@@ -1,9 +1,11 @@
+using CRM.Api.Configuration;
 using CRM.API.Contexto;
 using CRM.API.Repository;
 using CRM.API.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,8 +43,6 @@ namespace CRM.API
                 options.SubstituteApiVersionInUrl = true;
             });
 
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
 
             services.AddDbContext<CRMContexto>(options =>
                 options.UseInMemoryDatabase(databaseName:"Clientes"),
@@ -50,25 +50,27 @@ namespace CRM.API
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
+
+            services.AddSwaggerConfig();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IWebHostEnvironment env,
+            IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwaggerConfig(provider);
+
             app.UseSerilogRequestLogging(); // <-- Add this line
 
             app.UseHttpsRedirection();
 
-            // Ativando middlewares para uso do Swagger
-            app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clientes V1");
-            });
 
             app.UseRouting();
 
