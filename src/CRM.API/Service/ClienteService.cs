@@ -20,8 +20,13 @@ namespace CRM.API.Service
 
         public Cliente AdicionarCliente(Cliente cliente)
         {
-            _clienteRepository.Criar(cliente);
-            _clienteRepository.Salvar();
+
+                _logger.LogInformation("Iniciando insert do cliente: {@cliente}", cliente);
+                _clienteRepository.Criar(cliente);
+                _clienteRepository.Salvar();
+ 
+
+
 
             return cliente;
         }
