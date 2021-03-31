@@ -25,6 +25,10 @@ namespace CRM.API
         {
 
             services.AddControllers();
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen();
+
             services.AddDbContext<CRMContexto>(options =>
                 options.UseInMemoryDatabase(databaseName:"Clientes"),
                 contextLifetime: ServiceLifetime.Singleton);
@@ -44,6 +48,12 @@ namespace CRM.API
             app.UseSerilogRequestLogging(); // <-- Add this line
 
             app.UseHttpsRedirection();
+
+            // Ativando middlewares para uso do Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clientes V1");
+            });
 
             app.UseRouting();
 
