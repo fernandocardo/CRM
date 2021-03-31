@@ -6,9 +6,10 @@ using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace CRM.API.Controllers
+namespace CRM.API.Controllers.v1
 {
-    [Route("[controller]")]
+    [ApiVersion("1")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ClienteController : ControllerBase
     {
