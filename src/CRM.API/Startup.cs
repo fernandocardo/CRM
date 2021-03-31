@@ -1,10 +1,8 @@
 using CRM.Api.Configuration;
+using CRM.API.Configuration;
 using CRM.API.Contexto;
-using CRM.API.Repository;
-using CRM.API.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,31 +25,11 @@ namespace CRM.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
-
-            //Versionamento de API
-            services.AddApiVersioning(options =>
-            {
-                options.AssumeDefaultVersionWhenUnspecified = true;
-                options.DefaultApiVersion = new ApiVersion(1,0);
-                options.ReportApiVersions = true;
-            });
-
-            services.AddVersionedApiExplorer(options =>
-            {
-                options.GroupNameFormat = "'v'V";
-                options.SubstituteApiVersionInUrl = true;
-            });
-
-
-            services.AddDbContext<CRMContexto>(options =>
-                options.UseInMemoryDatabase(databaseName:"Clientes"),
-                contextLifetime: ServiceLifetime.Singleton);
-
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<IClienteService, ClienteService>();
+            services.AddApiConfig();
 
             services.AddSwaggerConfig();
+
+            services.ResolveDI();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
