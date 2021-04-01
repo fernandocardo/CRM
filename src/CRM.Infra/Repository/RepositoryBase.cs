@@ -1,14 +1,14 @@
-﻿using CRM.API.Contexto;
-using CRM.API.Models;
+﻿using CRM.Domain.Models;
+using CRM.Domain.Repository.Base;
+using CRM.Infra.Contexto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
-namespace CRM.API.Repository.Base
+namespace CRM.Infra.Repository
 {
     public class RepositoryBase<T> : IRepositoryBase<T>
         where T : EntidadeBase

@@ -1,8 +1,8 @@
-﻿using CRM.API.Models;
+﻿using CRM.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace CRM.API.Contexto
+namespace CRM.Infra.Contexto
 {
     public class CRMContexto :DbContext
     {

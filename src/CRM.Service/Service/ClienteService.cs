@@ -1,10 +1,9 @@
-﻿using CRM.API.Models;
-using CRM.API.Repository;
+﻿using CRM.Domain.Models;
+using CRM.Domain.Repository;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 
-namespace CRM.API.Service
+namespace CRM.Service.Service
 {
 
     public class ClienteService : IClienteService

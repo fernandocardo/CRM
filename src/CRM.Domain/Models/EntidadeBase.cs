@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CRM.API.Models
+namespace CRM.Domain.Models
 {
     public class EntidadeBase
     {

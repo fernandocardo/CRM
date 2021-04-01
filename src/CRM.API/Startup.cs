@@ -1,10 +1,7 @@
-using CRM.Api.Configuration;
-using CRM.API.Configuration;
-using CRM.API.Contexto;
+using CRM.Config.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

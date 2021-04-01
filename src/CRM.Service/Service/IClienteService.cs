@@ -1,7 +1,7 @@
-﻿using CRM.API.Models;
+﻿using CRM.Domain.Models;
 using System.Collections.Generic;
 
-namespace CRM.API.Service
+namespace CRM.Service.Service
 {
     public interface IClienteService
     {
@@ -9,7 +9,6 @@ namespace CRM.API.Service
         IEnumerable<Cliente> ObterCliente();
         Cliente AdicionarCliente(Cliente cliente);
         void RemoverCliente(int id);
-
 
     }
 }

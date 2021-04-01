@@ -1,5 +1,5 @@
-﻿using CRM.API.Models;
-using CRM.API.Service;
+﻿using CRM.Domain.Models;
+using CRM.Service.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;

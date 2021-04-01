@@ -1,9 +1,9 @@
-﻿using CRM.API.Models;
+﻿using CRM.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace CRM.API.Repository.Base
+namespace CRM.Domain.Repository.Base
 {
     public interface IReadRepositoryBase<T> where T : EntidadeBase
     {

@@ -1,10 +1,11 @@
-﻿using CRM.API.Contexto;
-using CRM.API.Repository;
-using CRM.API.Service;
+﻿using CRM.Domain.Repository;
+using CRM.Infra.Contexto;
+using CRM.Infra.Repository;
+using CRM.Service.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CRM.API.Configuration
+namespace CRM.Config.Configuration
 {
     public static class DIConfig
     {
