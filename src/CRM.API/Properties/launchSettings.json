@@ -36,9 +36,9 @@
     "WSL 2": {
       "commandName": "WSL2",
       "launchBrowser": false,
-      "launchUrl": "https://localhost:5001/weatherforecast",
+      "launchUrl": "https://localhost:5002/weatherforecast",
       "environmentVariables": {
-        "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000",
+        "ASPNETCORE_URLS": "https://localhost:50012;http://localhost:5000",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "distributionName": ""
