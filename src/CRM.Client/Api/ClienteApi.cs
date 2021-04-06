@@ -23,8 +23,8 @@ namespace CRM.Client.Api
             if (response.IsSuccessStatusCode)
             {
 
-                var contents = await response.Content.ReadAsStringAsync();
 
+                var contents = await response.Content.ReadAsStringAsync();
 
                 return contents;
             }
