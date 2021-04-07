@@ -31,7 +31,7 @@ namespace CRM.API.Controllers.v1
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public ActionResult<List<Cliente>> GetById(int id)
+        public ActionResult<Cliente> GetById(int id)
         {
             return Ok(_clienteService.ObterCliente(id));
         }
